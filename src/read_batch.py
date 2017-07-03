@@ -2,6 +2,7 @@
 
 #Dependencies
 import re
+from read_funcs import befriend, unfriend, purchase
 
 #Open batch log file and initialize values of D and T, then strip header
 f = open('log_input/batch_log.json','r')
@@ -18,11 +19,19 @@ batch.sort()
 #print(batch)
 
 #initialize list of users
-batch_dict={}
-batch_dict[
+users = set()
+friendlist = {}
+purchases = {}
+
 for i in batch:
     r=re.match(".*\"(.*)\".*\"(.*)\".*\"(.*)\".*\"(.*)\".*\"(.*)\".*\"(.*)\".*\"(.*)\".*\"(.*)\"",i)
-    new_record = {r.group(1) : r.group(2), r.group(3) : r.group(4), r.group(5) : r.group(6), r.group(7) : r.group(8)
-    batch_dict.update(new_record)
+    if r.group(2)=="befriend" :
+        befriend(r.group(6),r.group(8), users, friendlist)
+    elif r.group(2)=="unfriend" :
+        unfriend(r.group(6),r.group(8), friendlist)
+    elif r.group(2)=="purchase" :
+        purchase(r.group(6),r.group(4),r.group(8), users, purchases)
 
-print(batch_dict)
+print(users)
+print(friendlist)
+print(purchases)
