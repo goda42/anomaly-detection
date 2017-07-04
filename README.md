@@ -19,10 +19,6 @@ anomaly-detection
 │   └── stream_log.json
 ├── log_output
 |   └── flagged_purchases.json
-├── sample_dataset
-│   └── batch_log.json
-│   └── batch_log2.json
-│   └── stream_log.json
 ├── insight_testsuite
     └── run_tests.sh
     └── tests
