@@ -5,7 +5,7 @@
 Python code to read input of transaction data from an e-commerce site,
 flag any anomalous transactions, as defined by being over (mean+3*std) and store them in an output file.
 
-##Usage: 
+#Usage: 
 
 Running run.sh will call streaming.py with arguments for the input and output files
 
