@@ -5,51 +5,6 @@
 Python code to read input of transaction data from an e-commerce site,
 flag any anomalous transactions, as defined by being over (mean+3*std) and store them in an output file.
 
-##File structure:
-anomaly-detection
-├── README.md 
-
-├── run.sh
-
-├── src
-
-│   └── streaming.py
-
-│   └── read_batch.py
-
-│   └── read_funcs.py
-
-│   └── calculate.py
-
-├── log_input
-
-│   └── batch_log.json
-
-│   └── stream_log.json
-
-├── log_output
-
-|   └── flagged_purchases.json
-
-├── insight_testsuite
-
-    └── run_tests.sh
-	
-    └── tests
-	
-        └── test_1
-		
-        |   ├── log_input
-		
-        |   │   └── batch_log.json
-		
-        |   │   └── stream_log.json
-		
-        |   |__ log_output
-		
-        |   │   └── flagged_purchases.json
-		
-
 ##Usage: 
 
 Running run.sh will call streaming.py with arguments for the input and output files
