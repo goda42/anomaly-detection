@@ -38,6 +38,7 @@ Usage: Running run.sh will call streaming.py with arguments for the input and ou
 Dependencies:
 	-re
 	-json
+	-sys
 	-collections
 	-math
 

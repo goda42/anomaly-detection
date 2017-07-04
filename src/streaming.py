@@ -2,6 +2,7 @@
 
 import re
 import json
+import sys
 from collections import OrderedDict
 from read_funcs import befriend, unfriend, purchase
 from read_batch import initialize_network,run_meanstd
@@ -14,10 +15,10 @@ purchases = {}
 mean={}
 std={}
 
-#temporary file assignment
-batch_file = 'log_input/batch_log.json'
-stream_file = 'log_input/stream_log.json'
-output_file = 'log_output/flagged_purchases.json'
+#file assignment from command line arguments
+batch_file = sys.argv[1]
+stream_file = sys.argv[2]
+output_file = sys.argv[3]
 
 #initialize the social network and purchase list with the batch file
 init_vars=initialize_network(users,friendlist,purchases,batch_file)
